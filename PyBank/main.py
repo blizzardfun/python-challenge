@@ -1,8 +1,8 @@
 import os
 import csv
 
-bank_csv_path = os.path.join("..","budget_data.csv")
-results_txt_path = os.path.join("..","budget_data_result.txt")
+bank_csv_path = os.path.join("..","Resources","budget_data.csv")
+results_txt_path = os.path.join("..","Output","budget_data_result.txt")
 
 with open (bank_csv_path,"r",newline = "") as bankfile:
     bankreader = csv.reader(bankfile,delimiter = ",")
@@ -37,10 +37,10 @@ with open (bank_csv_path,"r",newline = "") as bankfile:
                 great_loss_date = row[0]
 result=[]                                                   #prepare results
 result.append("    Financial Analysis")
-result.append("   --------------------------")
+result.append("-----------------------------")
 
 result.append(f"    Total Months :{tot_months}")
-result.append("    Total ${:0,.0f}".format(tot_profit_loss))
+result.append("    Total Net Profit/Loss: ${:0,.0f}".format(tot_profit_loss))
 result.append("    Average Change: ${:>#11,.2f}".format(sum_of_change / (tot_months - 1)))
 result.append("    Greatest Increase in Profits: {0} (${1:>#13,.0f})".format(great_profit_date,greatest_profit))
 result.append("    Greatest Decrease in Profits: {0} (${1:>#13,.0f})".format(great_loss_date,greatest_loss))
