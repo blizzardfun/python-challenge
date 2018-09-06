@@ -17,15 +17,8 @@ with open (poll_csv_path, "r",newline = "") as pollfile:
             election[row[2]] = 1
 
 if votecount >0:                                #find the winner
-    #max_votes = 0
-    #for candidate in election.keys():
-    #    if election[candidate] > max_votes:
-    #        max_votes = election[candidate]
-    #        winner = candidate
-
     candidate = list(election.keys() )
     tally = list( election.values()  )
-   # max_votes=max(tally)
     winner = candidate[tally.index(max(tally))  ] 
 
     result=[]                                               #prepare results in a list
@@ -42,6 +35,6 @@ if votecount >0:                                #find the winner
     for line in result:                         #print results to terminal
         print (line)
 
-   # with open (results_txt_path, "w") as resultfile:        #send results to a file
-    #   for line in result:
-     #       resultfile.write(line + "\n" )
+    with open (results_txt_path, "w") as resultfile:        #send results to a file
+       for line in result:
+            resultfile.write(line + "\n" )
