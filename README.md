@@ -1,5 +1,5 @@
 # python-challenge
-repo for python homework #3
+
 PART 1 -PyBank The script reads from the file budget_data.csv the profit or loss figures by month and prints out the following financial analysis both to the terminal and to the file budget_data_result.txt in the Output directory:
 
 The total number of months included in the dataset
